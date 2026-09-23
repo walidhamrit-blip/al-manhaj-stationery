@@ -1,0 +1,16 @@
+fragment PostParts on Post {
+  __typename
+  title
+  category
+  body
+}
+
+fragment CategoryParts on Category {
+  __typename
+  categoryId
+  nameEn
+  nameAr
+  descEn
+  descAr
+  image
+}

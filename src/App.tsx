@@ -27,14 +27,14 @@ export default function App() {
       try {
         setLoading(true);
         
-        // Récupération des articles
+        // Récupération des articles (Typage 'any' ajouté pour débloquer TypeScript)
         const postRes = await client.queries.postConnection();
-        const fetchedPosts = postRes.data.postConnection.edges?.map(edge => edge?.node) || [];
+        const fetchedPosts = postRes.data.postConnection.edges?.map((edge: any) => edge?.node) || [];
         setPosts(fetchedPosts as Post[]);
 
-        // Récupération des catégories
+        // Récupération des catégories (Typage 'any' ajouté pour débloquer TypeScript)
         const categoryRes = await client.queries.categoryConnection();
-        const fetchedCategories = categoryRes.data.categoryConnection.edges?.map(edge => edge?.node) || [];
+        const fetchedCategories = categoryRes.data.categoryConnection.edges?.map((edge: any) => edge?.node) || [];
         setCategories(fetchedCategories as Category[]);
 
       } catch (err) {
