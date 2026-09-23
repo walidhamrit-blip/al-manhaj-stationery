@@ -1,43 +1,26 @@
 import { defineConfig } from "tinacms";
 
-// Your hosting provider likely exposes this as an environment variable
-const branch =
-  process.env.GITHUB_BRANCH ||
-  process.env.VERCEL_GIT_COMMIT_REF ||
-  process.env.HEAD ||
-  "main";
-
 export default defineConfig({
-  branch,
-
-  // Get this from tina.io
-  clientId: process.env.TINA_PUBLIC_CLIENT_ID || process.env.NEXT_PUBLIC_TINA_CLIENT_ID || process.env.VITE_TINA_CLIENT_ID,
-  // Get this from tina.io
-  token: process.env.TINA_TOKEN,
-
+  branch: "main",
+  clientId: "",
+  token: "",
   build: {
     outputFolder: "admin",
     publicFolder: "public",
   },
-  // Uncomment to allow cross-origin requests from non-localhost origins
-  // during local development (e.g. GitHub Codespaces, Gitpod, Docker).
-  // Use 'private' to allow all private-network IPs (WSL2, Docker, etc.)
-  // server: {
-  //   allowedOrigins: ['https://your-codespace.github.dev'],
-  // },
   media: {
     tina: {
-      mediaRoot: "",
       publicFolder: "public",
+      mediaRoot: "uploads",
     },
   },
-  // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/r/content-modelling-collections/
   schema: {
     collections: [
       {
         name: "post",
         label: "Posts",
         path: "content/posts",
+        format: "md",
         fields: [
           {
             type: "string",
@@ -47,10 +30,57 @@ export default defineConfig({
             required: true,
           },
           {
+            type: "string",
+            name: "category",
+            label: "ID de la catégorie (ex: school, books)",
+            required: true,
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Body",
             isBody: true,
+          },
+        ],
+      },
+      {
+        name: "category",
+        label: "Catégories",
+        path: "content/categories",
+        format: "json",
+        fields: [
+          {
+            type: "string",
+            name: "categoryId",
+            label: "Identifiant (ID)",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "nameEn",
+            label: "Nom (Anglais)",
+          },
+          {
+            type: "string",
+            name: "nameAr",
+            label: "Nom (Arabe)",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "descEn",
+            label: "Description (Anglais)",
+          },
+          {
+            type: "string",
+            name: "descAr",
+            label: "Description (Arabe)",
+          },
+          {
+            type: "string",
+            name: "image",
+            label: "Chemin de l'image",
           },
         ],
       },

@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "id": "school",
+      "nameEn": "School Supplies",
+      "nameAr": "اللوازم المدرسية",
+      "descEn": "Notebooks, pens, backpacks",
+      "descAr": "كراسات، أقلام، حقائب",
+      "image": "/products/notebooks.jpg"
+    },
+    {
+      "id": "books",
+      "nameEn": "Books & Library",
+      "nameAr": "المكتبة والكتب",
+      "descEn": "School textbooks, novels",
+      "descAr": "الكتب المدرسية، الروايات",
+      "image": "/products/arabicbooks.jpg"
+    }
+  ]
+}
