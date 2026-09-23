@@ -2,8 +2,6 @@ import { defineConfig } from "tinacms";
 
 export default defineConfig({
   branch: "main",
-  clientId: "dummy-client-id",
-  token: "dummy-token",
   build: {
     outputFolder: "admin",
     publicFolder: "public",
