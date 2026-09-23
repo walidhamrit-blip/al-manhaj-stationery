@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tinacms build && tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+  "dev": "tinacms dev -c \"npm run dev\"",
+  "build": "tinacms build --local && tsc -b && vite build",
+  "preview": "vite preview"
+}
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
