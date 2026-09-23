@@ -1,5 +1,6 @@
 ---
-title: BIENVENUE A MANHAJ
+title: Cahier Selecta de test
+category: school
 ---
 
-1234
+Ceci est le contenu de test de mon article pour éviter l'erreur undefined.[chips.ico.bmp](/uploads/chips.ico.bmp "chips.ico.bmp")
