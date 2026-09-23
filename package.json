@@ -1,5 +1,18 @@
-"scripts": {
-  "dev": "tinacms dev -c \"npm run dev\"",
-  "build": "tsc -b && vite build",
-  "preview": "vite preview"
+{
+  "name": "vite-react-ts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tinacms dev -c \"npm run dev\"",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "@tinacms/cli": "^3.1.0",
+    "framer-motion": "^12.35.0",
+    "lucide-react": "^0.400.0",
+    "tinacms": "^3.14.1"
+  }
 }
