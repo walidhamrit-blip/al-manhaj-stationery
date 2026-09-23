@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "tinacms dev -c \"npm run dev\"",
-    "build": "npx tinacms build --local && tsc -b && vite build",
+    "build": "npx @tinacms/cli build --local && tsc -b && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
+    "@tinacms/cli": "^2.7.0",
     "framer-motion": "^12.35.0",
     "lucide-react": "^0.400.0",
     "tinacms": "^3.14.0"
